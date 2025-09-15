@@ -153,32 +153,9 @@ body.dark #toggle-theme {
         font-size: 1.1rem;
     }
 }
-        </style>
-    <script>
-        // Toggle light/dark mode
-const btn = document.getElementById('toggle-theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-function setTheme(dark) {
-    document.body.classList.toggle('dark', dark);
-    btn.textContent = dark ? '☀️' : '🌙';
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
-}
-
-// Load saved or system theme on start
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'dark' || (prefersDark && !savedTheme)) {
-    setTheme(true);
-} else {
-    setTheme(false);
-}
-
-btn.addEventListener('click', () => {
-    setTheme(!document.body.classList.contains('dark'));
-});
-    </script>
+    </style>
     <header>
-        <h1>My Learning Progress</h1>
+        <h1>My Learning Progress In IT</h1>
     </header>
     <main>
         <section>
@@ -233,6 +210,28 @@ btn.addEventListener('click', () => {
         <p>Keep learning and building!</p>
     </footer>
     <button id="toggle-theme" aria-label="Toggle dark/light mode">🌙</button>
-    <script src="main.js"></script>
+    <script src="main.js">
+          // Toggle light/dark mode
+const btn = document.getElementById('toggle-theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+function setTheme(dark) {
+    document.body.classList.toggle('dark', dark);
+    btn.textContent = dark ? '☀️' : '🌙';
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+}
+
+// Load saved or system theme on start
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark' || (prefersDark && !savedTheme)) {
+    setTheme(true);
+} else {
+    setTheme(false);
+}
+
+btn.addEventListener('click', () => {
+    setTheme(!document.body.classList.contains('dark'));
+});
+    </script>
 </body>
 </html>
